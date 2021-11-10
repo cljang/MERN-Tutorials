@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { retrieveTutorials, findTutorialsByTitle, deleteAllTutorials } from "../actions/tutorials";
@@ -12,30 +12,30 @@ function TutorialsList(props) {
     searchTitle: "",
   })
 
-  function componentDidMount() {
+  useEffect(() => {
     props.retrieveTutorials();
-  }
+  },[])
 
   function onChangeSearchTitle(event) {
     const searchTitle = event.target.value;
 
-    setState(prevValue => ({
-      ...prevValue,
+    setState(prevState => ({
+      ...prevState,
       searchTitle: searchTitle,
     }));
   }
 
   function refreshData() {
-    setState(prevValue => ({
-      ...prevValue,
+    setState(prevState => ({
+      ...prevState,
       currentTutorial: null,
       currentIndex: -1,
     }));
   }
 
   function setActiveTutorial(tutorial, index) {
-    setState(prevValue => ({
-      ...prevValue,
+    setState(prevState => ({
+      ...prevState,
       currentTutorial: tutorial,
       currentIndex: index,
     }));
@@ -48,8 +48,8 @@ function TutorialsList(props) {
         console.log(response);
         refreshData();
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((err) => {
+        console.log(err);
       });
   }
 
@@ -129,8 +129,8 @@ function TutorialsList(props) {
             </div>
 
             <Link
-              to={"/tutorials/" + state.currentTutorial.id}
-              className="badge badge-warning"
+              to={"/tutorials/" + state.currentTutorial._id}
+              className="badge bg-warning"
             >
               Edit
             </Link>

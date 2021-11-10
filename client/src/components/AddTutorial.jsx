@@ -13,15 +13,15 @@ function AddTutorial(props) {
   })
 
   function onChangeTitle(event) {
-    setState(prevValue =>({
-      ...prevValue,
+    setState(prevState =>({
+      ...prevState,
       title: event.target.value,
     }));
   }
 
   function onChangeDescription(event) {
-    setState(prevValue =>({
-      ...prevValue,
+    setState(prevState =>({
+      ...prevState,
       description: event.target.value,
     }));
   }
@@ -41,8 +41,8 @@ function AddTutorial(props) {
         });
         console.log(data);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((err) => {
+        console.log(err);
       });
   }
 
