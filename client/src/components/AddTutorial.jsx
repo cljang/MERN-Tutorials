@@ -83,8 +83,7 @@ function AddTutorial(props) {
 
           <div className="mb-3">
             <label htmlFor="description">Description</label>
-            <input
-              type="text"
+            <textarea
               className="form-control"
               id="description"
               required
