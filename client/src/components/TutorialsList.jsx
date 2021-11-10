@@ -61,8 +61,8 @@ function TutorialsList(props) {
 
   return (
     <div className="list row">
-      <div className="col-md-8">
-        <div className="input-group mb-3">
+      <div className="col-md-12 mb-3">
+        <div className="input-group">
           <input
             type="text"
             className="form-control"
@@ -79,7 +79,7 @@ function TutorialsList(props) {
             </button>
         </div>
       </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mb-3">
           <h4>Tutorials List</h4>
 
           <ul className="list-group">
@@ -105,7 +105,7 @@ function TutorialsList(props) {
             Delete All
           </button>
         </div>
-      <div className="col-md-6">
+      <div className="col-md-6 mb-3">
         {state.currentTutorial ? (
           <div>
             <h4>Tutorial</h4>

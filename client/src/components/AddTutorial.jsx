@@ -93,7 +93,7 @@ function AddTutorial(props) {
             />
           </div>
 
-          <button onClick={saveTutorial} className="btn btn-success">
+          <button onClick={saveTutorial} className="btn btn-success mb-3">
             Submit
           </button>
         </div>
